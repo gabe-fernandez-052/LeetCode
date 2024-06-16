@@ -7,53 +7,63 @@
     /// </summary>
     public class TwoSum : ILeetCode
     {
-        public void BruteForce()
+        public int[] BruteForce(int[] nums, int target)
         {
-            var target = 4;
-            var nums = new int[] { 2, 1, 5, 3 };
-            var indices = new int[2];
-
-            for (var i = 0; i < nums.Length - 1; i++)
+            for (var outer = 0; outer < nums.Length; outer++)
             {
-                if (nums[i] + nums[i + 1] == target)
+                for (var inner = outer + 1; inner < nums.Length; inner++)
                 {
-                    indices[0] = i;
-                    indices[1] = i + 1;
-
-                    break;
-                    //return indices;
+                    if (nums[outer] + nums[inner] == target)
+                    {
+                        return [outer, inner];
+                    }
                 }
             }
 
-            //return indices
+            return [];
         }
 
-        public void Optimized()
+        public int[] TwoPass(int[] nums, int target)
         {
-            var target = 4;
-            var nums = new int[] { 2, 1, 5, 3 };
-            var indices = new int[2];
             var dictIndices = new Dictionary<int, int>();
 
-            for (var i = 0; i < nums.Length - 1; i++)
+            for (var i = 0; i < nums.Length; i++)
+            {
+                dictIndices.TryAdd(nums[i], i);
+            }
+
+            int complement;
+
+            for (var i = 0; i < nums.Length; i++)
+            {
+                complement = target - nums[i];
+
+                if (dictIndices.ContainsKey(complement) && dictIndices[complement] != i)
+                {
+                    return [i, dictIndices[complement]];
+                }
+            }
+
+            return [];
+        }
+
+        public int[] OnePass(int[] nums, int target)
+        {
+            var dictIndices = new Dictionary<int, int>();
+
+            for (var i = 0; i < nums.Length; i++)
             {
                 var key = target - nums[i];
 
                 if (dictIndices.TryGetValue(key, out int value))
                 {
-                    indices[0] = value;
-                    indices[1] = i;
+                    return [value, i];
+                }
 
-                    break;
-                    //return indices
-                }
-                else
-                {
-                    dictIndices.Add(nums[i], i);
-                }
+                dictIndices.TryAdd(nums[i], i);
             }
 
-            //return indices
+            return [];
         }
     }
 }

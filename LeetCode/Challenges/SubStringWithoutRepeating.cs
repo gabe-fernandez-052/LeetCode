@@ -6,7 +6,7 @@
     /// </summary>
     public class SubStringWithoutRepeating
     {
-        public int LengthOfLongestSubstring(string s)
+        public int Run(string s)
         {
             int result = 0;
             var allCharactersOuter = s.ToArray();

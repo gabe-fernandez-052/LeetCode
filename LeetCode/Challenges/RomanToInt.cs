@@ -9,7 +9,7 @@
     /// C can be placed before D(500) and M(1000) to make 400 and 900.
     /// Given a roman numeral, convert it to an integer.
     /// </summary>
-    public class RomanToInt
+    public class RomanToInt : ILeetCode
     {
         public int Run(string s)
         {

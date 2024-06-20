@@ -4,7 +4,7 @@
     /// Given a string s, find the length of the longest substring without repeating characters.
     /// s consists of English letters, digits, symbols and spaces.
     /// </summary>
-    public class SubStringWithoutRepeating
+    public class SubStringWithoutRepeating : ILeetCode
     {
         public int Run(string s)
         {

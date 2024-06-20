@@ -1,5 +1,5 @@
 ﻿using LeetCode.Challenges;
 
-new SubStringWithoutRepeating().LengthOfLongestSubstring("dvdf");
+new LongestCommonPrefix().Run(["flower", "flow", "flight"]);
 
 Console.ReadLine();

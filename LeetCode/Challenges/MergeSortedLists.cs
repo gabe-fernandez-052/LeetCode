@@ -11,7 +11,7 @@
     ///var l2n2 = new ListNode(3, l2n3);
     ///var head2 = new ListNode(1, l2n2);
     /// </summary>
-    public class MergeSortedLists
+    public class MergeSortedLists : ILeetCode
     {
         public ListNode? Run(ListNode list1, ListNode list2)
         {

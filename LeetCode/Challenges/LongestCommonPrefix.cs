@@ -6,8 +6,6 @@ namespace LeetCode.Challenges
     /// Write a function to find the longest common prefix string amongst an array of strings.
     /// If there is no common prefix, return an empty string "".
     /// </summary>
-    /// <param name="strs"></param>
-    /// <returns></returns>
     public class LongestCommonPrefix : ILeetCode
     {
         public string Run(string[] strs)

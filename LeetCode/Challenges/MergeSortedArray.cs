@@ -10,16 +10,24 @@
     {
         public void Run(int[] nums1, int m, int[] nums2, int n)
         {
-            int p1 = m - 1;
-            int p2 = n - 1;
-            int i = m + n - 1;
+            var pointer1 = m - 1;
+            var pointer2 = n - 1;
+            var lastIndex = m + n - 1;
 
-            while (p2 >= 0)
+            while (pointer2 >= 0)
             {
-                if (p1 >= 0 && nums1[p1] > nums2[p2])
-                    nums1[i--] = nums1[p1--];
+                if (pointer1 >= 0 && nums1[pointer1] > nums2[pointer2])
+                {
+                    nums1[lastIndex] = nums1[pointer1];
+                    pointer1--;
+                }
                 else
-                    nums1[i--] = nums2[p2--];
+                {
+                    nums1[lastIndex] = nums2[pointer2];
+                    pointer2--;
+                }
+
+                lastIndex--;
             }
         }
     }

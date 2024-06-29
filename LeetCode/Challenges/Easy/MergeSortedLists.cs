@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Challenges
+﻿using LeetCode.Challenges.Shared;
+
+namespace LeetCode.Challenges.Easy
 {
     /// <summary>
     /// You are given the heads of two sorted linked lists list1 and list2.
@@ -35,21 +37,6 @@
                 list2.next = Run(list1, list2.next);
                 return list2;
             }
-        }
-    }
-
-    /// <summary>
-    /// Definition for singly-linked list.
-    /// </summary>
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
         }
     }
 }

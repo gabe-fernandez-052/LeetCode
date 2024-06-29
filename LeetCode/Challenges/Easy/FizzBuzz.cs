@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Challenges
+﻿namespace LeetCode.Challenges.Easy
 {
     /// <summary>
     /// Given an integer n, return a string array answer (1-indexed) where:

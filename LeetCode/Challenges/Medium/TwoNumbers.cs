@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace LeetCode.Challenges
+namespace LeetCode.Challenges.Medium
 {
     /// <summary>
     /// You are given two non-empty linked lists representing two non-negative integers.

@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Challenges
+﻿namespace LeetCode.Challenges.Easy
 {
     /// <summary>
     /// You are climbing a staircase. It takes n steps to reach the top.

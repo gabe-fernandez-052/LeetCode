@@ -1,4 +1,4 @@
-﻿namespace LeetCode.Challenges
+﻿namespace LeetCode.Challenges.Easy
 {
     /// <summary>
     /// You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer.

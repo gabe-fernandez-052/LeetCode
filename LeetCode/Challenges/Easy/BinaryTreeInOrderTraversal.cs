@@ -1,4 +1,6 @@
-﻿namespace LeetCode.Challenges
+﻿using LeetCode.Challenges.Shared;
+
+namespace LeetCode.Challenges.Easy
 {
     /// <summary>
     /// Given the root of a binary tree, return the inorder traversal of its nodes' values.
@@ -38,15 +40,5 @@
 
             Traverse(node.right);
         }
-    }
-
-    /// <summary>
-    /// Definition for a binary tree node.
-    /// </summary>
-    public class TreeNode(int val = 0, TreeNode? left = null, TreeNode? right = null)
-    {
-        public int val = val;
-        public TreeNode? left = left;
-        public TreeNode? right = right;
     }
 }

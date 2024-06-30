@@ -11,60 +11,40 @@
     {
         public bool Run(string s)
         {
-            var parentheses = s.ToArray(); //([])
-
-            if (parentheses.Length % 2 != 0)
+            if (s.Length % 2 != 0)
             {
                 return false;
             }
 
-            var validPairs = new Dictionary<string, string>()
-            {
-                { "(",")" },
-                { "[","]" },
-                { "{","}" },
-            };
+            var closedParenStack = new Stack<char>();
 
-            var result = true;
-            var openOptions = new Stack<string>();
-
-            //iterate over individual parentheses
-            for (int i = 0; i < parentheses.Length; i++)
+            foreach (char c in s)
             {
-                //check if parentheses is an open option
-                if (validPairs.ContainsKey(parentheses[i].ToString()))
+                if (c == '(')
                 {
-                    openOptions.Push(parentheses[i].ToString());
+                    closedParenStack.Push(')');
+                    continue;
                 }
-                else
-                {
-                    if (openOptions.Count == 0)
-                    {
-                        return false;
-                    }
 
-                    foreach (var openOption in openOptions)
-                    {
-                        //next value is the closing for the open option
-                        if (validPairs[openOption] == parentheses[i].ToString())
-                        {
-                            openOptions.Pop();
-                            break;
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
+                if (c == '[')
+                {
+                    closedParenStack.Push(']');
+                    continue;
+                }
+
+                if (c == '{')
+                {
+                    closedParenStack.Push('}');
+                    continue;
+                }
+
+                if (closedParenStack.Count == 0 || c != closedParenStack.Pop())
+                {
+                    return false;
                 }
             }
 
-            if (openOptions.Count > 0)
-            {
-                result = false;
-            }
-
-            return result;
+            return closedParenStack.Count == 0;
         }
     }
 }

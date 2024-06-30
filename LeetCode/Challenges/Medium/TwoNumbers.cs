@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using LeetCode.Challenges.Shared;
+using System.Numerics;
+using System.Text;
 
 namespace LeetCode.Challenges.Medium
 {
@@ -10,46 +12,53 @@ namespace LeetCode.Challenges.Medium
     /// </summary>
     public class TwoNumbers : ILeetCode
     {
-        public LinkedList<int> Run(LinkedList<int> l1, LinkedList<int> l2)
+        private StringBuilder _sb1 = new();
+        private StringBuilder _sb2 = new();
+
+        public ListNode Run(ListNode l1, ListNode l2)
         {
-            var l1Reversed = new StringBuilder();
-            var l2Reversed = new StringBuilder();
+            TraverseLinkedLists(l1, l2);
 
-            for (int i = l1.Count - 1; i >= 0; i--)
+            BigInteger.TryParse(_sb1.ToString(), out BigInteger l1Value);
+            BigInteger.TryParse(_sb2.ToString(), out BigInteger l2Value);
+
+            var stringSum = (l1Value + l2Value).ToString();
+
+            ListNode? result = null;
+
+            foreach (var c in stringSum)
             {
-                l1Reversed.Append(l1.ElementAt(i));
-            }
-
-            for (int i = l2.Count - 1; i >= 0; i--)
-            {
-                l2Reversed.Append(l2.ElementAt(i));
-            }
-
-            var result = new LinkedList<int>();
-
-            if (int.TryParse(l1Reversed.ToString(), out int l1ReversedNumeric) &&
-                int.TryParse(l2Reversed.ToString(), out int l2ReversedNumeric))
-            {
-                var combined = (l1ReversedNumeric + l2ReversedNumeric).ToString().ToArray();
-
-                for (int i = combined.Length - 1; i >= 0; i--)
+                if (int.TryParse(c.ToString(), out int cValue))
                 {
-                    if (int.TryParse(combined[i].ToString(), out int resultInt))
-                    {
-                        result.AddLast(resultInt);
-                    }
-                    else
-                    {
-                        //handle
-                    }
+                    var node = new ListNode(cValue, result);
+                    result = node;
                 }
-            }
-            else
-            {
-                //handle
             }
 
             return result;
+        }
+
+        public void TraverseLinkedLists(ListNode? l1, ListNode? l2)
+        {
+            if (l1 != null)
+            {
+                if (l1.next != null)
+                {
+                    TraverseLinkedLists(l1.next, null);
+                }
+
+                _sb1.Append(l1.val);
+            }
+
+            if (l2 != null)
+            {
+                if (l2.next != null)
+                {
+                    TraverseLinkedLists(null, l2.next);
+                }
+
+                _sb2.Append(l2.val);
+            }
         }
     }
 }

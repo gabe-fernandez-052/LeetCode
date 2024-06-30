@@ -10,24 +10,23 @@
     {
         public void Run(int[] nums1, int m, int[] nums2, int n)
         {
-            var pointer1 = m - 1;
-            var pointer2 = n - 1;
-            var lastIndex = m + n - 1;
+            var nums1Pointer = m - 1;
+            var nums2Pointer = n - 1;
+            var endNums1Pointer = nums1.Length - 1;
 
-            while (pointer2 >= 0)
+            while (nums2Pointer >= 0)
             {
-                if (pointer1 >= 0 && nums1[pointer1] > nums2[pointer2])
+                if (nums1Pointer >= 0 && nums1[nums1Pointer] > nums2[nums2Pointer])
                 {
-                    nums1[lastIndex] = nums1[pointer1];
-                    pointer1--;
+                    nums1[endNums1Pointer] = nums1[nums1Pointer];
+                    nums1Pointer--;
                 }
                 else
                 {
-                    nums1[lastIndex] = nums2[pointer2];
-                    pointer2--;
+                    nums1[endNums1Pointer] = nums2[nums2Pointer];
+                    nums2Pointer--;
                 }
-
-                lastIndex--;
+                endNums1Pointer--;
             }
         }
     }

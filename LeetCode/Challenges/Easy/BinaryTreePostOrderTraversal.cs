@@ -3,14 +3,14 @@
 namespace LeetCode.Challenges.Easy
 {
     /// <summary>
-    /// Given the root of a binary tree, return the inorder traversal of its nodes' values.
+    /// Given the root of a binary tree, return the Postorder traversal of its nodes' values.
     /// new TreeNode(5, new TreeNode(3, new TreeNode(2), new TreeNode(4)), new TreeNode(8, null, new TreeNode(9)));
     /// </summary>
-    public class BinaryTreeInOrderTraversal : ILeetCode
+    public class BinaryTreePostOrderTraversal : ILeetCode
     {
         private List<int> _nodes = [];
 
-        public IList<int> Run(TreeNode? root)
+        public IList<int> Run(TreeNode root)
         {
             if (root == null)
             {
@@ -20,31 +20,30 @@ namespace LeetCode.Challenges.Easy
             if (root.left == null && root.right == null)
             {
                 _nodes.Add(root.val);
-
                 return _nodes;
             }
 
-            TraverseInOrder(root);
+            TraversePostOrder(root);
 
             return _nodes;
         }
 
         /// <summary>
-        /// /// DFS - InOrder (Left, Node, Right)
+        /// /// DFS - PostOrder (Left, Right, Node)
         /// </summary>
         /// <param name="node"></param>
-        private void TraverseInOrder(TreeNode? node)
+        public void TraversePostOrder(TreeNode? root)
         {
-            if (node == null)
+            if (root == null)
             {
                 return;
             }
 
-            TraverseInOrder(node.left);
+            TraversePostOrder(root.left);
 
-            _nodes.Add(node.val);
+            TraversePostOrder(root.right);
 
-            TraverseInOrder(node.right);
+            _nodes.Add(root.val);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace LeetCode.Challenges.Medium
         private StringBuilder _sb1 = new();
         private StringBuilder _sb2 = new();
 
-        public ListNode Run(ListNode l1, ListNode l2)
+        public ListNode? Run(ListNode? l1, ListNode? l2)
         {
             TraverseLinkedLists(l1, l2);
 

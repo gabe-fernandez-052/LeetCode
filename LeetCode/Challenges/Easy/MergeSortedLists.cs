@@ -11,7 +11,7 @@ namespace LeetCode.Challenges.Easy
     /// </summary>
     public class MergeSortedLists : ILeetCode
     {
-        public ListNode? Run(ListNode list1, ListNode list2)
+        public ListNode? Run(ListNode? list1, ListNode? list2)
         {
             var dummyNode = new ListNode();
             var current = dummyNode;

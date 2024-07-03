@@ -1,5 +1,6 @@
-﻿using LeetCode.Challenges.Medium;
+﻿using LeetCode.Challenges;
+using LeetCode.Challenges.Medium;
 
-new LongestPalindromeSubstring().Run("caba");
+new StringToInteger().Run("words and 987");
 
 Console.ReadLine();

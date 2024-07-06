@@ -1,6 +1,5 @@
-﻿using LeetCode.Challenges;
-using LeetCode.Challenges.Medium;
+﻿using LeetCode.Challenges.Medium;
 
-new StringToInteger().Run("words and 987");
+new SortAnArray().Run([5, 2, 3, 1]);
 
 Console.ReadLine();

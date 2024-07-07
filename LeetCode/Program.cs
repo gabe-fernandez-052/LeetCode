@@ -1,5 +1,5 @@
 ﻿using LeetCode.Challenges.Medium;
 
-new SortAnArray().Run([5, 2, 3, 1]);
+new PhoneLetterCombinations().Run("23");
 
 Console.ReadLine();

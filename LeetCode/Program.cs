@@ -1,5 +1,6 @@
 ﻿using LeetCode.Challenges.Medium;
+using LeetCode.Challenges.Shared;
 
-new PhoneLetterCombinations().Run("23");
+new RemoveNthNode().Run(new ListNode(1, new ListNode(2)), 2);
 
 Console.ReadLine();

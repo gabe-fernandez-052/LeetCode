@@ -1,6 +1,5 @@
 ﻿using LeetCode.Challenges.Medium;
-using LeetCode.Challenges.Shared;
 
-new RemoveNthNode().Run(new ListNode(1, new ListNode(2)), 2);
+new DivideTwoIntegers().Run(-2147483648, -1);
 
 Console.ReadLine();

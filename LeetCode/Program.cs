@@ -1,4 +1,4 @@
 ﻿using LeetCode.Challenges.Medium;
 
-new Permutations().Run([1, 2, 3]);
+new GroupAnagrams().Run(["eat", "tea", "tan", "ate", "nat", "bat"]);
 Console.ReadLine();

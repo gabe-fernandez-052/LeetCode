@@ -1,4 +1,5 @@
-﻿using LeetCode.Challenges.Medium;
+﻿using LeetCode.Challenges;
+using LeetCode.Challenges.Medium;
 
-new GroupAnagrams().Run(["eat", "tea", "tan", "ate", "nat", "bat"]);
+new SortColors().Run([2, 0, 2, 1, 1, 0]);
 Console.ReadLine();
